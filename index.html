@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Socio de Escala a Medida</title>
+<meta name="description" content="Una alianza de 6 meses para escalar tu negocio digital con un plan armado a tu medida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Una sola pantalla continua en negro, con luz dorada que se mueve a lo largo de la página.
+   Sin bandas ni cortes: las secciones se separan con aire y líneas finas que se desvanecen. */
+:root{
+  --ink:#0A0A0A; --char:#14120F; --ivory:#FCFBF8;
+  --gold:#C9A24D; --gold-lt:#F0DDA0; --gold-dk:#94722B;
+  --soft:#C9C3B6; --line:#35302A;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --foil:linear-gradient(135deg,#F0DDA0,#C9A24D 50%,#94722B);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--ivory);font-family:var(--sans);font-size:18px;line-height:1.6;text-align:center;-webkit-font-smoothing:antialiased}
+.page{position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 700px at 100% 0%,rgba(201,162,77,.20),transparent 65%),
+    radial-gradient(800px 700px at 0% 42%,rgba(201,162,77,.10),transparent 65%),
+    radial-gradient(900px 800px at 100% 78%,rgba(201,162,77,.14),transparent 65%),
+    var(--ink)}
+.wrap{max-width:900px;margin-inline:auto;padding-inline:max(24px,env(safe-area-inset-left,0px))}
+section{padding-block:clamp(40px,6vw,76px)}
+.stack{display:flex;flex-direction:column;align-items:center;gap:20px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.2rem,5vw + .6rem,4.2rem);line-height:1.06}
+h1 em,h2 em{font-style:italic;color:var(--gold)}
+h2{font-size:clamp(1.9rem,3vw + .8rem,3rem);line-height:1.08}
+p{margin:0;color:var(--soft);text-wrap:pretty}
+.eyebrow{font-size:.78rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.pre{font-family:var(--serif);font-size:clamp(1.2rem,1.2vw + .9rem,1.7rem);line-height:1.25}
+.foil{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:var(--gold);-webkit-text-fill-color:transparent}
+.rule{height:1px;max-width:520px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+
+.hero{padding-top:clamp(48px,7vw,96px)}
+.video-box{position:relative;width:100%;max-width:860px;margin-top:14px;aspect-ratio:16/9;background:var(--char);border:1px solid rgba(201,162,77,.6);box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 80px rgba(201,162,77,.12)}
+.video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.video-box video{position:absolute;inset:0;width:100%;height:100%;background:#000;object-fit:contain;z-index:1}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.play{width:84px;height:84px;border-radius:50%;background:var(--foil);display:grid;place-items:center}
+.play::before{content:"";margin-left:8px;border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent var(--ink)}
+.video-ph b{font-family:var(--serif);font-weight:600;font-size:1.5rem;color:var(--ivory)}
+.micro{font-size:.95rem}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 34px;background:var(--foil);color:var(--ink);font:600 1.05rem/1 var(--sans);text-decoration:none;transition:filter .2s}
+.btn:hover{filter:brightness(1.07)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.cta{display:flex;flex-direction:column;align-items:center;gap:12px}
+
+/* Lo esencial */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:30px 0;width:100%}
+.fact{display:flex;flex-direction:column;gap:2px;padding:6px 20px}
+.fact+.fact{border-left:1px solid var(--line)}
+.fact b{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,7vw,5.2rem);line-height:1}
+.fact span{font-size:1.05rem;color:var(--soft)}
+@media (max-width:620px){.fact+.fact{border-left:0}}
+
+
+/* Cómo se hace */
+.block{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.block h3{font-size:clamp(1.5rem,1.6vw + 1rem,2.1rem);color:var(--ivory)}
+.tiny{font-size:.9rem;color:#9F9889}
+.path-h{display:block;width:100%;max-width:860px;height:auto}
+.path-labels{display:grid;grid-template-columns:repeat(6,1fr);width:100%;max-width:860px;margin-top:-4px}
+.path-labels div{display:flex;flex-direction:column;gap:2px;padding:0 4px}
+.path-labels span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.path-labels b{font-weight:500;font-size:.98rem;line-height:1.25;color:var(--ivory)}
+.path-v{display:none;list-style:none;margin:0;padding:0 0 0 22px;width:100%;max-width:340px;text-align:left;border-left:2px solid var(--gold)}
+.path-v li{position:relative;display:flex;flex-direction:column;padding:10px 0 10px 22px}
+.path-v li::before{content:"";position:absolute;left:-31px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:3px solid var(--gold)}
+.path-v li:nth-child(n+4){margin-left:14px}
+.path-v span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.path-v b{font-weight:500;font-size:1.1rem;color:var(--ivory)}
+@media (max-width:640px){.path-h,.path-labels{display:none}.path-v{display:block}}
+
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px 36px;align-items:center;width:100%;max-width:880px}
+.scores{list-style:none;margin:0;padding:0;text-align:left}
+.scores li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-top:1px solid var(--line);color:var(--ivory);font-size:1.02rem}
+.scores li:last-child{border-bottom:1px solid var(--line)}
+.scores b{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1;color:var(--gold)}
+.scores .low{border-top-color:var(--gold);color:var(--gold-lt);font-weight:600}
+.scores .low b{color:var(--gold-lt);font-size:1.9rem}
+#rueda{display:block;width:100%;max-width:340px;height:auto;margin-inline:auto}
+.w-ring{fill:none;stroke:var(--line);stroke-width:1}.w-ring.outer{stroke:var(--gold);stroke-opacity:.7}
+.w-spoke{stroke:var(--line);stroke-width:1}
+.w-area{fill:var(--gold);fill-opacity:.18;stroke:var(--gold);stroke-width:1.8;stroke-linejoin:round}
+.w-dot{fill:var(--ivory)}.w-low,.w-disc{fill:var(--gold)}
+.w-center{fill:var(--ink);font:600 12px var(--sans);text-anchor:middle}
+.w-label{fill:var(--ivory);font:500 14px var(--sans)}.w-label.low{fill:var(--gold-lt);font-weight:600}
+.funnel{display:flex;flex-direction:column;align-items:center;gap:12px}
+.funnel svg{width:150px;height:auto}
+.funnel p{font-size:.95rem;max-width:20ch}
+
+.versus{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0;width:100%;max-width:820px;text-align:left}
+.versus>div{display:flex;flex-direction:column;gap:8px;padding:28px 32px}
+.versus span{font-size:.78rem;letter-spacing:.26em;text-transform:uppercase}
+.vs-a{border:1px solid var(--line)}.vs-a span{color:#8F897B}.vs-a p{color:#8F897B;text-decoration:line-through;text-decoration-color:rgba(143,137,123,.6)}
+.vs-b{border:1px solid var(--gold);background:rgba(20,18,15,.7)}.vs-b span{color:var(--gold)}.vs-b p{color:var(--ivory);font-size:1.12rem}
+
+/* Inversión */
+.bars{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,2vw,22px);align-items:end;width:100%;max-width:760px;margin-top:14px}
+.bar{display:flex;flex-direction:column;align-items:center;gap:8px}
+.bar .v{font-family:var(--serif);font-weight:600;font-size:clamp(1.05rem,2.4vw,1.6rem);color:var(--gold)}
+.bar i{display:block;width:100%;height:var(--h);background:var(--foil)}
+.bar.low i{background:linear-gradient(180deg,rgba(201,162,77,.55),rgba(148,114,43,.55))}
+.bar .m{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(8px,2vw,22px);width:100%;max-width:760px}
+.legend p{font-size:.98rem;padding-top:12px;border-top:1px solid var(--gold)}
+.legend p+p{margin-left:0}
+.legend .l1{grid-column:1/2}
+.price-line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 36px}
+.price-line div{display:flex;flex-direction:column;gap:0}
+.price-line b{font-family:var(--serif);font-weight:600;font-size:clamp(2.8rem,6vw,4.4rem);line-height:1.05}
+.price-line span{font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+.plus{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);line-height:1}
+.var{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 28px}
+.var b{font-family:var(--serif);font-weight:600;font-size:clamp(4rem,11vw,7rem);line-height:1}
+.var p{max-width:22ch;text-align:left;font-size:clamp(1.1rem,1vw + 1rem,1.35rem);line-height:1.3;color:var(--ivory)}
+.offer{padding:18px 30px;border:1px solid var(--gold);background:rgba(20,18,15,.7)}
+.offer p{color:var(--ivory);font-size:1.15rem}
+.offer strong{font-weight:600;color:var(--gold-lt)}
+
+/* Para vos */
+.fit{list-style:none;margin:0;padding:0;width:100%;max-width:640px}
+.fit li{padding:15px 0;border-top:1px solid var(--line);color:var(--ivory)}
+.fit li:first-child{border-top-color:rgba(201,162,77,.6)}
+.fit li:last-child{border-bottom:1px solid var(--line)}
+
+.number{font-size:1rem}.number span{color:var(--gold);font-weight:600;user-select:all}
+footer{padding-block:34px 44px}
+footer p{font-size:.82rem;max-width:68ch;margin-inline:auto;color:#8F897B}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- 1. VIDEO -->
+<header class="wrap hero">
+  <div class="stack">
+    <p class="eyebrow">Socio de Escala a Medida · Alianza de 6 meses</p>
+    <p class="pre">Existen muchas recetas del éxito para negocios digitales.</p>
+    <h1>Lo que falta es alguien que esté dispuesto a sentarse con vos, entender tu negocio y armar <em>la tuya</em>.</h1>
+
+    <div class="video-box">
+      <div class="video-ph"><div class="play" aria-hidden="true"></div><b>Mirá el video</b></div>
+      <div id="vid"></div>
+    </div>
+    <p class="micro">4 minutos. Te cuento cómo trabajo, cuánto cuesta y para quién es.</p>
+    <div class="cta">
+      <a class="btn" data-wa href="https://wa.me/5493518605729" target="_blank" rel="noopener">Escribime por WhatsApp <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="rule"></div>
+
+<!-- 2. LO ESENCIAL -->
+<section class="wrap">
+  <div class="facts">
+    <div class="fact"><b class="foil">6</b><span>meses de trabajo juntos</span></div>
+    <div class="fact"><b class="foil">2</b><span>etapas: construir y escalar</span></div>
+    <div class="fact"><b class="foil">100%</b><span>a tu medida, nada prearmado</span></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 2b. CÓMO SE HACE -->
+<section class="wrap" id="como">
+  <div class="stack" style="gap:56px">
+    <div class="stack">
+      <p class="eyebrow">Cómo se hace</p>
+      <h2>Así lo hacemos <em>juntos</em>.</h2>
+    </div>
+
+    <div class="block">
+      <h3>6 meses, paso a paso</h3>
+      <svg class="path-h" viewBox="0 0 900 240" role="img" aria-label="Un camino que sube durante los 6 meses: diagnóstico, primeros pasos del plan, sistema propio, comenzás a escalar, medimos y ajustamos, tu próximo nivel">
+        <defs>
+          <linearGradient id="pg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#94722B"/><stop offset=".5" stop-color="#C9A24D"/><stop offset="1" stop-color="#F0DDA0"/></linearGradient>
+          <linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A24D" stop-opacity=".28"/><stop offset="1" stop-color="#C9A24D" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path d="M75,205 C100.0,200.2 175.0,179.5 225,176 C275.0,172.5 325.0,192.0 375,184 C425.0,176.0 475.0,143.0 525,128 C575.0,113.0 625.0,108.0 675,94 C725.0,80.0 800.0,52.3 825,44 L825,232 L75,232 Z" fill="url(#pa)"/>
+        <path d="M75,205 C100.0,200.2 175.0,179.5 225,176 C275.0,172.5 325.0,192.0 375,184 C425.0,176.0 475.0,143.0 525,128 C575.0,113.0 625.0,108.0 675,94 C725.0,80.0 800.0,52.3 825,44" fill="none" stroke="url(#pg)" stroke-width="5" stroke-linecap="round"/>
+        <line x1="75" y1="205" x2="75" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="75" cy="205" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/><line x1="225" y1="176" x2="225" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="225" cy="176" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/><line x1="375" y1="184" x2="375" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="375" cy="184" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/><line x1="525" y1="128" x2="525" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="525" cy="128" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/><line x1="675" y1="94" x2="675" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="675" cy="94" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/><line x1="825" y1="44" x2="825" y2="232" stroke="rgba(201,162,77,.35)" stroke-dasharray="3 5"/><circle cx="825" cy="44" r="10" fill="#0A0A0A" stroke="#C9A24D" stroke-width="3"/>
+      </svg>
+      <div class="path-labels"><div><span>Mes 1</span><b>Diagnóstico</b></div><div><span>Mes 2</span><b>Primeros pasos del plan</b></div><div><span>Mes 3</span><b>Sistema propio</b></div><div><span>Mes 4</span><b>Comenzás a escalar</b></div><div><span>Mes 5</span><b>Medimos y ajustamos</b></div><div><span>Mes 6</span><b>Tu próximo nivel</b></div></div>
+      <ol class="path-v"><li><span>Mes 1</span><b>Diagnóstico</b></li><li><span>Mes 2</span><b>Primeros pasos del plan</b></li><li><span>Mes 3</span><b>Sistema propio</b></li><li><span>Mes 4</span><b>Comenzás a escalar</b></li><li><span>Mes 5</span><b>Medimos y ajustamos</b></li><li><span>Mes 6</span><b>Tu próximo nivel</b></li></ol>
+      <p class="tiny">Meses 1 a 3: construcción. Meses 4 a 6: escalamiento.</p>
+    </div>
+
+    <div class="block">
+      <h3>Analizamos tu negocio</h3>
+      <div class="method">
+        <ul class="scores">
+          <li><span>Avatar</span><b>7</b></li>
+          <li><span>Oferta</span><b>6</b></li>
+          <li><span>Marketing</span><b>7</b></li>
+          <li><span>Contenido</span><b>6</b></li>
+          <li class="low"><span>Embudo y ventas</span><b>3</b></li>
+          <li><span>Operaciones y entrega</span><b>7</b></li>
+          <li><span>Finanzas</span><b>5</b></li>
+          <li><span>Sistemas y equipo</span><b>6</b></li>
+        </ul>
+        <svg id="rueda" viewBox="0 0 390 312" role="img" aria-label="Rueda del negocio de ejemplo: ocho áreas alrededor de la identidad, con ventas como el punto más bajo"></svg>
+        <div class="funnel">
+          <svg viewBox="0 0 220 250" role="img" aria-label="Embudo de ventas con un plan para resolverlo paso a paso">
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0DDA0"/><stop offset=".5" stop-color="#C9A24D"/><stop offset="1" stop-color="#94722B"/></linearGradient></defs>
+            <polygon points="10,10 210,10 190,66 30,66" fill="none" stroke="#C9A24D" stroke-opacity=".7" stroke-width="2"/>
+            <polygon points="34,78 186,78 166,134 54,134" fill="none" stroke="#C9A24D" stroke-opacity=".7" stroke-width="2"/>
+            <polygon points="58,146 162,146 146,192 74,192" fill="url(#fg)"/>
+            <polygon points="82,204 138,204 128,240 92,240" fill="none" stroke="#C9A24D" stroke-opacity=".7" stroke-width="2"/>
+          </svg>
+          <p>Un plan paso a paso para resolver el embudo completo.</p>
+        </div>
+      </div>
+      <p class="tiny">Ejemplo ilustrativo. Puntuamos cada área del 1 al 10 y empezamos por la más baja.</p>
+    </div>
+
+    <div class="block">
+      <h3>Nada prearmado</h3>
+      <div class="versus">
+        <div class="vs-a"><span>Prearmado</span><p>Una receta igual para todos.</p></div>
+        <div class="vs-b"><span>A tu medida</span><p>Partimos de tu negocio. Lo que tenés, lo mejoramos. Lo que te falta, lo creamos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 3. INVERSIÓN -->
+<section class="wrap">
+  <div class="stack">
+    <p class="eyebrow">La inversión</p>
+    <h2>Un fijo <em>y</em> un variable.</h2>
+
+    <div class="bars" role="img" aria-label="Fijo por mes: US$500 los meses 1 a 3 y US$200 los meses 4 a 6">
+      <div class="bar"><span class="v">US$500</span><i style="--h:200px"></i><span class="m">Mes 1</span></div>
+      <div class="bar"><span class="v">US$500</span><i style="--h:200px"></i><span class="m">Mes 2</span></div>
+      <div class="bar"><span class="v">US$500</span><i style="--h:200px"></i><span class="m">Mes 3</span></div>
+      <div class="bar low"><span class="v">US$200</span><i style="--h:80px"></i><span class="m">Mes 4</span></div>
+      <div class="bar low"><span class="v">US$200</span><i style="--h:80px"></i><span class="m">Mes 5</span></div>
+      <div class="bar low"><span class="v">US$200</span><i style="--h:80px"></i><span class="m">Mes 6</span></div>
+    </div>
+    <div class="legend">
+      <p>Meses 1 a 3 · los de más trabajo</p>
+      <p>Meses 4 a 6 · seguimiento</p>
+    </div>
+
+    <div class="price-line" style="margin-top:14px">
+      <div><span>Total fijo en 6 meses</span><b class="foil">US$2.100</b></div>
+    </div>
+
+    <span class="plus foil" aria-hidden="true">+</span>
+
+    <div class="var"><b class="foil">20%</b><p>de lo que crezca tu facturación.</p></div>
+
+    <div class="offer"><p>Pago único de contado: <strong>US$1.500</strong>. Precio promocional para las primeras 3 personas.</p></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 4. PARA VOS -->
+<section class="wrap">
+  <div class="stack">
+    <p class="eyebrow">Es para vos si</p>
+    <ul class="fit">
+      <li>Tenés un negocio digital.</li>
+      <li>Tu facturación está estancada, o sube y baja sin que entiendas por qué.</li>
+      <li>Estás dispuesto a ejecutar, a delegar y a mostrarte.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 5. DUDAS -->
+<section class="wrap">
+  <div class="stack">
+    <h2>¿Tenés alguna duda?</h2>
+    <div class="cta">
+      <a class="btn" data-wa href="https://wa.me/5493518605729" target="_blank" rel="noopener">Escribime por WhatsApp <span aria-hidden="true">→</span></a>
+      <p class="number">WhatsApp: <span data-wa-text>+54 9 3518-605729</span></p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Darío Alexis Fontana. Los resultados dependen de la ejecución de cada cliente y no se garantizan ingresos. La alianza es un acuerdo de trabajo con incentivos compartidos y no implica participación societaria en tu negocio.</p>
+</footer>
+
+</div>
+
+<script>
+/* ===== CONFIGURAR AQUÍ ===== */
+var YOUTUBE_ID = "";   /* ID del video de YouTube (no listado). Ej: dQw4w9WgXcQ */
+var WHATSAPP_NUMBER = "5493518605729";
+var WHATSAPP_DISPLAY = "+54 9 3518-605729";
+var WHATSAPP_MESSAGE = "Hola Darío, vi tu video de Socio de Escala a Medida y quiero conversar sobre mi negocio.";
+/* =========================== */
+(function () {
+  var box = document.getElementById("vid");
+  if (box && YOUTUBE_ID) {
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + YOUTUBE_ID + "?rel=0&modestbranding=1&playsinline=1";
+    f.title = "Socio de Escala a Medida";
+    f.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+    f.allowFullscreen = true;
+    box.replaceWith(f);
+    var ph = document.querySelector(".video-ph"); if (ph) ph.hidden = true;
+  }
+  var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = url; });
+  document.querySelectorAll("[data-wa-text]").forEach(function (s) { s.textContent = WHATSAPP_DISPLAY; });
+  /* Rueda de ejemplo, valores ilustrativos del 1 al 10 */
+  var svg = document.getElementById("rueda");
+  if (svg) {
+    var NS = "http://www.w3.org/2000/svg";
+    var cx = 195, cy = 172, r0 = 36, R = 100, LR = 114;
+    var areas = [["Avatar", 7], ["Oferta", 6], ["Marketing", 7], ["Contenido", 6], ["Ventas", 3], ["Entrega", 7], ["Finanzas", 5], ["Sistemas", 6]];
+    var low = 0; areas.forEach(function (a, i) { if (a[1] < areas[low][1]) low = i; });
+    var ang = function (i) { return (-90 + 45 * i) * Math.PI / 180; };
+    var rad = function (v) { return r0 + (R - r0) * v / 10; };
+    var pt = function (i, r) { return [cx + r * Math.cos(ang(i)), cy + r * Math.sin(ang(i))]; };
+    var mk = function (name, attrs, text) {
+      var e = document.createElementNS(NS, name);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      if (text != null) e.textContent = text;
+      svg.appendChild(e); return e;
+    };
+    mk("circle", { "class": "w-ring", cx: cx, cy: cy, r: rad(5) });
+    mk("circle", { "class": "w-ring outer", cx: cx, cy: cy, r: R });
+    areas.forEach(function (a, i) { var p1 = pt(i, r0), p2 = pt(i, R); mk("line", { "class": "w-spoke", x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1] }); });
+    mk("polygon", { "class": "w-area", points: areas.map(function (a, i) { var p = pt(i, rad(a[1])); return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ") });
+    areas.forEach(function (a, i) { var p = pt(i, rad(a[1])); mk("circle", { "class": i === low ? "w-low" : "w-dot", cx: p[0], cy: p[1], r: i === low ? 7 : 3 }); });
+    mk("circle", { "class": "w-disc", cx: cx, cy: cy, r: r0 });
+    mk("text", { "class": "w-center", x: cx, y: cy + 4 }, "Identidad");
+    areas.forEach(function (a, i) {
+      var p = pt(i, LR), c = Math.cos(ang(i)), sn = Math.sin(ang(i));
+      mk("text", { "class": "w-label" + (i === low ? " low" : ""), x: p[0].toFixed(1), y: (p[1] + (sn > .3 ? 10 : (sn < -.3 ? -2 : 5))).toFixed(1), "text-anchor": c > .3 ? "start" : (c < -.3 ? "end" : "middle") }, a[0]);
+    });
+  }
+})();
+</script>
+</body>
+</html>
